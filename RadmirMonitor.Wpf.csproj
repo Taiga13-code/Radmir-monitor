@@ -10,7 +10,7 @@
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
     <AssemblyName>RadmirMonitor</AssemblyName>
     <RootNamespace>RadmirMonitor</RootNamespace>
-    <Version>3.1.0</Version>
+    <Version>3.2.0</Version>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
     <!-- Default publish is one framework-dependent EXE. -->

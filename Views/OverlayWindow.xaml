@@ -4,9 +4,9 @@
         WindowStyle="None" AllowsTransparency="True" Background="Transparent"
         ShowInTaskbar="False" Topmost="True" SizeToContent="WidthAndHeight"
         FontFamily="Segoe UI Variable Text, Segoe UI">
-    <Border Background="#F20F172A" BorderBrush="#344565" BorderThickness="1" CornerRadius="15" Padding="15,12">
+    <Border Background="#F2191A1D" BorderBrush="#55F28A32" BorderThickness="1" CornerRadius="15" Padding="15,12">
         <Border.Effect>
-            <DropShadowEffect BlurRadius="18" ShadowDepth="4" Opacity="0.35" Color="#000000"/>
+            <DropShadowEffect BlurRadius="22" ShadowDepth="4" Opacity="0.38" Color="#000000"/>
         </Border.Effect>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -15,18 +15,18 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
-                <TextBlock Text="РЕПОРТЫ" Foreground="#8595B3" FontSize="9" FontWeight="SemiBold"/>
+                <TextBlock Text="РЕПОРТЫ" Foreground="#A29D96" FontSize="9" FontWeight="SemiBold"/>
                 <TextBlock x:Name="ReportsText" Text="0" Foreground="#F4F7FF" FontSize="21" FontWeight="SemiBold" Margin="0,2,0,0"/>
             </StackPanel>
             <Border Grid.Column="1" Width="1" Background="#293852" Margin="8,2"/>
             <StackPanel Grid.Column="2">
-                <TextBlock Text="ОНЛАЙН" Foreground="#8595B3" FontSize="9" FontWeight="SemiBold"/>
+                <TextBlock Text="ОНЛАЙН" Foreground="#A29D96" FontSize="9" FontWeight="SemiBold"/>
                 <TextBlock x:Name="OnlineText" Text="0:00" Foreground="#46DBA0" FontSize="21" FontWeight="SemiBold" Margin="0,2,0,0"/>
             </StackPanel>
             <Border Grid.Column="3" Width="1" Background="#293852" Margin="8,2"/>
             <StackPanel Grid.Column="4">
-                <TextBlock Text="НАКАЗАНИЯ" Foreground="#8595B3" FontSize="9" FontWeight="SemiBold"/>
-                <TextBlock x:Name="PunishmentsText" Text="0" Foreground="#8C75FF" FontSize="21" FontWeight="SemiBold" Margin="0,2,0,0"/>
+                <TextBlock Text="НАКАЗАНИЯ" Foreground="#A29D96" FontSize="9" FontWeight="SemiBold"/>
+                <TextBlock x:Name="PunishmentsText" Text="0" Foreground="#B494F5" FontSize="21" FontWeight="SemiBold" Margin="0,2,0,0"/>
             </StackPanel>
         </Grid>
     </Border>

@@ -7,20 +7,20 @@
         <FontFamily x:Key="AppFont">Segoe UI</FontFamily>
         <FontFamily x:Key="DisplayFont">Segoe UI</FontFamily>
 
-        <Color x:Key="BgColor">#090E1B</Color>
-        <Color x:Key="SidebarColor">#10162A</Color>
-        <Color x:Key="PanelColor">#111A30</Color>
-        <Color x:Key="CardColor">#151F38</Color>
-        <Color x:Key="CardHoverColor">#1B2948</Color>
-        <Color x:Key="InputColor">#0C1427</Color>
-        <Color x:Key="BorderColor">#243454</Color>
-        <Color x:Key="TextColor">#F4F7FF</Color>
-        <Color x:Key="MutedColor">#91A1BE</Color>
-        <Color x:Key="AccentColor">#4DA3FF</Color>
-        <Color x:Key="VioletColor">#795CFF</Color>
-        <Color x:Key="GreenColor">#46DBA0</Color>
-        <Color x:Key="RedColor">#FF6B7A</Color>
-        <Color x:Key="YellowColor">#FFD166</Color>
+        <Color x:Key="BgColor">#101114</Color>
+        <Color x:Key="SidebarColor">#141518</Color>
+        <Color x:Key="PanelColor">#18191D</Color>
+        <Color x:Key="CardColor">#1D1F23</Color>
+        <Color x:Key="CardHoverColor">#26282D</Color>
+        <Color x:Key="InputColor">#141518</Color>
+        <Color x:Key="BorderColor">#303237</Color>
+        <Color x:Key="TextColor">#F5F2ED</Color>
+        <Color x:Key="MutedColor">#A29D96</Color>
+        <Color x:Key="AccentColor">#F28A32</Color>
+        <Color x:Key="VioletColor">#B494F5</Color>
+        <Color x:Key="GreenColor">#65D6A2</Color>
+        <Color x:Key="RedColor">#F27970</Color>
+        <Color x:Key="YellowColor">#F4C56A</Color>
 
         <SolidColorBrush x:Key="BgBrush" Color="{StaticResource BgColor}"/>
         <SolidColorBrush x:Key="SidebarBrush" Color="{StaticResource SidebarColor}"/>
@@ -38,9 +38,20 @@
         <SolidColorBrush x:Key="YellowBrush" Color="{StaticResource YellowColor}"/>
 
         <LinearGradientBrush x:Key="AccentGradient" StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#8B5CFF" Offset="0"/>
-            <GradientStop Color="#4C8FFF" Offset="0.55"/>
-            <GradientStop Color="#34C7FF" Offset="1"/>
+            <GradientStop Color="#FFB452" Offset="0"/>
+            <GradientStop Color="#F28A32" Offset="0.55"/>
+            <GradientStop Color="#D85A24" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="HeroGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#282016" Offset="0"/>
+            <GradientStop Color="#211B17" Offset="0.52"/>
+            <GradientStop Color="#1C1D20" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="CardGradient" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#222428" Offset="0"/>
+            <GradientStop Color="#1C1E22" Offset="1"/>
         </LinearGradientBrush>
 
         <Style TargetType="Window">
@@ -62,14 +73,14 @@
         </Style>
 
         <Style x:Key="CardStyle" TargetType="Border">
-            <Setter Property="Background" Value="{StaticResource CardBrush}"/>
+            <Setter Property="Background" Value="{StaticResource CardGradient}"/>
             <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="CornerRadius" Value="16"/>
             <Setter Property="Padding" Value="20"/>
             <Setter Property="Effect">
                 <Setter.Value>
-                    <DropShadowEffect BlurRadius="7" ShadowDepth="1" Opacity="0.08" Color="#000000"/>
+                    <DropShadowEffect BlurRadius="18" ShadowDepth="3" Opacity="0.16" Color="#000000"/>
                 </Setter.Value>
             </Setter>
         </Style>
@@ -115,7 +126,7 @@
         </Style>
 
         <Style x:Key="SecondaryButton" TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
-            <Setter Property="Background" Value="#1B2946"/>
+            <Setter Property="Background" Value="#2A2C30"/>
             <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
         </Style>
 
@@ -148,13 +159,13 @@
                             <Border x:Name="Accent" Width="3" HorizontalAlignment="Left" Background="Transparent" CornerRadius="0,3,3,0"/>
                             <Grid Margin="22,0,16,0">
                                 <Grid.ColumnDefinitions><ColumnDefinition Width="26"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
-                                <TextBlock x:Name="Dot" Text="●" FontSize="10" Foreground="#53617D" VerticalAlignment="Center"/>
+                                <TextBlock x:Name="Dot" Text="●" FontSize="10" Foreground="#65615C" VerticalAlignment="Center"/>
                                 <ContentPresenter Grid.Column="1" VerticalAlignment="Center"/>
                             </Grid>
                         </Grid>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Bg" Property="Background" Value="#161F38"/><Setter Property="Foreground" Value="#B9C3D8"/></Trigger>
-                            <Trigger Property="IsChecked" Value="True"><Setter TargetName="Bg" Property="Background" Value="#1A2340"/><Setter TargetName="Accent" Property="Background" Value="{StaticResource VioletBrush}"/><Setter TargetName="Dot" Property="Foreground" Value="{StaticResource AccentBrush}"/><Setter Property="Foreground" Value="{StaticResource TextBrush}"/></Trigger>
+                            <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Bg" Property="Background" Value="#222326"/><Setter Property="Foreground" Value="#D7D1C9"/></Trigger>
+                            <Trigger Property="IsChecked" Value="True"><Setter TargetName="Bg" Property="Background" Value="#2B241D"/><Setter TargetName="Accent" Property="Background" Value="{StaticResource AccentBrush}"/><Setter TargetName="Dot" Property="Foreground" Value="{StaticResource AccentBrush}"/><Setter Property="Foreground" Value="{StaticResource TextBrush}"/></Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -205,7 +216,7 @@
                             </Border>
                         </Grid>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="IsChecked" Value="True"><Setter TargetName="Track" Property="Background" Value="{StaticResource VioletBrush}"/><Setter TargetName="Thumb" Property="HorizontalAlignment" Value="Right"/><Setter TargetName="Thumb" Property="Fill" Value="White"/></Trigger>
+                            <Trigger Property="IsChecked" Value="True"><Setter TargetName="Track" Property="Background" Value="{StaticResource AccentBrush}"/><Setter TargetName="Thumb" Property="HorizontalAlignment" Value="Right"/><Setter TargetName="Thumb" Property="Fill" Value="White"/></Trigger>
                             <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Track" Property="Opacity" Value="0.9"/></Trigger>
                             <Trigger Property="IsEnabled" Value="False"><Setter Property="Opacity" Value="0.45"/></Trigger>
                         </ControlTemplate.Triggers>
@@ -229,8 +240,8 @@
                             <ContentPresenter/>
                         </Border>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="IsHighlighted" Value="True"><Setter TargetName="Root" Property="Background" Value="#1C2A49"/></Trigger>
-                            <Trigger Property="IsSelected" Value="True"><Setter TargetName="Root" Property="Background" Value="#26375F"/></Trigger>
+                            <Trigger Property="IsHighlighted" Value="True"><Setter TargetName="Root" Property="Background" Value="#292B2F"/></Trigger>
+                            <Trigger Property="IsSelected" Value="True"><Setter TargetName="Root" Property="Background" Value="#382A1D"/></Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -260,7 +271,7 @@
                                 </Border>
                             </ToggleButton>
                             <Popup x:Name="PART_Popup" AllowsTransparency="True" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}" Focusable="False" PopupAnimation="Fade">
-                                <Border Background="#111A30" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1" CornerRadius="10" Padding="5" Margin="0,4,0,0" MinWidth="{Binding ActualWidth, ElementName=Toggle}">
+                                <Border Background="#1D1F23" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1" CornerRadius="10" Padding="5" Margin="0,4,0,0" MinWidth="{Binding ActualWidth, ElementName=Toggle}">
                                     <ScrollViewer MaxHeight="250" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                                         <ItemsPresenter/>
                                     </ScrollViewer>
@@ -269,7 +280,7 @@
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsKeyboardFocusWithin" Value="True"><Setter TargetName="Frame" Property="BorderBrush" Value="{StaticResource AccentBrush}"/></Trigger>
-                            <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Frame" Property="Background" Value="#111C33"/></Trigger>
+                            <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Frame" Property="Background" Value="#1A1C20"/></Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -291,10 +302,28 @@
                         <Grid>
                             <Track x:Name="PART_Track" VerticalAlignment="Center">
                                 <Track.DecreaseRepeatButton><RepeatButton Style="{StaticResource SliderRepeatButton}" Background="{StaticResource AccentBrush}" Command="{x:Static Slider.DecreaseLarge}"/></Track.DecreaseRepeatButton>
-                                <Track.Thumb><Thumb Width="16" Height="16"><Thumb.Template><ControlTemplate TargetType="Thumb"><Ellipse x:Name="Knob" Fill="#F5F8FF" Stroke="{StaticResource AccentBrush}" StrokeThickness="3"/><ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Knob" Property="Fill" Value="#DDEBFF"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Thumb.Template></Thumb></Track.Thumb>
-                                <Track.IncreaseRepeatButton><RepeatButton Style="{StaticResource SliderRepeatButton}" Background="#2A3856" Command="{x:Static Slider.IncreaseLarge}"/></Track.IncreaseRepeatButton>
+                                <Track.Thumb><Thumb Width="16" Height="16"><Thumb.Template><ControlTemplate TargetType="Thumb"><Ellipse x:Name="Knob" Fill="#F5F2ED" Stroke="{StaticResource AccentBrush}" StrokeThickness="3"/><ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Knob" Property="Fill" Value="#FFE4C5"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Thumb.Template></Thumb></Track.Thumb>
+                                <Track.IncreaseRepeatButton><RepeatButton Style="{StaticResource SliderRepeatButton}" Background="#383A3F" Command="{x:Static Slider.IncreaseLarge}"/></Track.IncreaseRepeatButton>
                             </Track>
                         </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="ProgressBar">
+            <Setter Property="Height" Value="7"/>
+            <Setter Property="Background" Value="#37393D"/>
+            <Setter Property="Foreground" Value="{StaticResource AccentBrush}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ProgressBar">
+                        <Border x:Name="PART_Track" Background="{TemplateBinding Background}" CornerRadius="4" ClipToBounds="True">
+                            <Grid>
+                                <Border x:Name="PART_Indicator" Background="{TemplateBinding Foreground}" HorizontalAlignment="Left" CornerRadius="4"/>
+                            </Grid>
+                        </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -351,10 +380,10 @@
             <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="GridLinesVisibility" Value="Horizontal"/>
-            <Setter Property="HorizontalGridLinesBrush" Value="#243452"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="#303237"/>
             <Setter Property="VerticalGridLinesBrush" Value="Transparent"/>
-            <Setter Property="RowBackground" Value="#111A30"/>
-            <Setter Property="AlternatingRowBackground" Value="#141F38"/>
+            <Setter Property="RowBackground" Value="#1C1E22"/>
+            <Setter Property="AlternatingRowBackground" Value="#202226"/>
             <Setter Property="HeadersVisibility" Value="Column"/>
             <Setter Property="CanUserAddRows" Value="False"/>
             <Setter Property="CanUserResizeRows" Value="False"/>
@@ -370,9 +399,9 @@
         </Style>
 
         <Style TargetType="DataGridColumnHeader">
-            <Setter Property="Background" Value="#10192E"/>
-            <Setter Property="Foreground" Value="#A7B5CF"/>
-            <Setter Property="BorderBrush" Value="#243452"/>
+            <Setter Property="Background" Value="#232529"/>
+            <Setter Property="Foreground" Value="#C0BBB4"/>
+            <Setter Property="BorderBrush" Value="#303237"/>
             <Setter Property="BorderThickness" Value="0,0,0,1"/>
             <Setter Property="Padding" Value="10,10"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
@@ -390,8 +419,8 @@
             <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True"><Setter Property="Background" Value="#1A2846"/></Trigger>
-                <Trigger Property="IsSelected" Value="True"><Setter Property="Background" Value="#24365C"/><Setter Property="Foreground" Value="White"/></Trigger>
+                <Trigger Property="IsMouseOver" Value="True"><Setter Property="Background" Value="#292B30"/></Trigger>
+                <Trigger Property="IsSelected" Value="True"><Setter Property="Background" Value="#3A2D21"/><Setter Property="Foreground" Value="White"/></Trigger>
             </Style.Triggers>
         </Style>
 
@@ -407,7 +436,7 @@
             <Setter Property="Margin" Value="0,1"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-            <Style.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter Property="Background" Value="#182441"/></Trigger></Style.Triggers>
+            <Style.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter Property="Background" Value="#292B30"/></Trigger></Style.Triggers>
         </Style>
     </Application.Resources>
 </Application>

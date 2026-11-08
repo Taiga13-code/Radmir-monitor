@@ -157,6 +157,24 @@ public partial class MainWindow : Window
         PunishmentsTodayText.Text = punishments.ToString();
         OnlineTodayText.Text = FormatOnline(online);
         ReportsPerHourText.Text = online > 0 ? (reports / (online / 60d)).ToString("0.0") : "0.0";
+        UpdateGoalProgress(reports, _settings.ReportGoal, ReportGoalProgressBar, ReportGoalProgressText, x => x.ToString());
+        UpdateGoalProgress(online, _settings.OnlineGoalMinutes, OnlineGoalProgressBar, OnlineGoalProgressText, FormatOnline);
+    }
+
+    private static void UpdateGoalProgress(int current, int goal, System.Windows.Controls.ProgressBar progress, TextBlock label, Func<int, string> format)
+    {
+        if (goal <= 0)
+        {
+            progress.Value = 0;
+            label.Text = "ЦЕЛЬ НЕ ЗАДАНА";
+            return;
+        }
+
+        var percentage = Math.Clamp(current * 100d / goal, 0, 100);
+        progress.Value = percentage;
+        label.Text = current >= goal
+            ? $"ЦЕЛЬ ВЫПОЛНЕНА · {percentage:0}%"
+            : $"{format(current)} / {format(goal)}";
     }
 
     private void RefreshHistory()
